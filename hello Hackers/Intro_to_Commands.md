@@ -16,7 +16,7 @@ In this level, invoke the hello command to get the flag! Keep in mind: commands 
 
 ## Solution
 
-_ Invoking the hello command.
+-Invoking the hello command.
 
  ```bash
 hacker@hello~intro-to-commands:~$ whoami
