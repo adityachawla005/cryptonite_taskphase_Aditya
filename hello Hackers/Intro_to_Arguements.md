@@ -42,6 +42,6 @@ hacker@hello~intro-to-arguments:~$
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/hello%20Hackers/1st.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/hello%20Hackers/assets/1st.png)
 
 
