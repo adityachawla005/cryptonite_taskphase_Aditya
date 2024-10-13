@@ -26,12 +26,7 @@ Success! Here is your flag:
 pwn.college{MoBtL_wfg9-3rsKWEo2rIREdPYT.ddjNyUDL1kzM2czW}
 ```
 
-
-
-
-
-
-
-
+<br>
+<br>
 
 ![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/hello%20Hackers/1st.png)
