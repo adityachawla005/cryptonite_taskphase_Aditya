@@ -4,7 +4,7 @@ This level used the concept of invoking commands in order to get the flag
 ## Challenge Descritpion
 In this challenge, you will invoke your first command! When you type a command and hit enter, the command will be invoked, as so:
 
-```bash
+```
 hacker@dojo:~$ whoami
 hacker
 hacker@dojo:~$
