@@ -1,7 +1,7 @@
 # Intro to Commands
 This level used the concept of invoking commands in order to get the flag
 
-## Challenge Descritpion
+## Challenge Description
 In this challenge, you will invoke your first command! When you type a command and hit enter, the command will be invoked, as so:
 
 ```bash
