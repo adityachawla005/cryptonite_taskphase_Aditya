@@ -1,5 +1,5 @@
-# Intro to Arguements
-This level required the use of giving arguements along with invoking commands in order to get the flag.
+# Intro to Arguments
+This level required the use of giving arguments along with invoking commands in order to get the flag.
 
 ## Challenge Description
 Let's try something more complicated: a command with arguments, which is what we call additional data passed to the command. When you type a line of text and hit enter, the shell actually parses your input into a command and its arguments. The first word is the command, and the subsequent words are arguments. Observe:
@@ -26,7 +26,7 @@ In this challenge, to get the flag, you must run the hello command (NOT the echo
 
 ## Solution
 
-Invoking the hello command and giving the arguement hackers along with it. 
+Invoking the hello command and giving the argument hackers along with it. 
 
  ```bash
 Connected!
