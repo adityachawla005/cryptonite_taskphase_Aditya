@@ -459,10 +459,10 @@ Now it's your turn to play! In this challenge, /challenge/run will write a copy 
     Before expansion, your argument must be three characters or less.
 
 ## Solution
-Navigate to /challenge and then invoke the run command.
+Invoke the /challenge/run command and give the argument as ~/n(/home/hacker/n).
 
 
- ```bash
+ ```bash 
 Connected!
 hacker@paths~home-sweet-home:~$ cd /
 hacker@paths~home-sweet-home:/$ ./challenge/run /home/hacker/n
@@ -472,7 +472,7 @@ hacker@paths~home-sweet-home:/$ ./challenge/run ~/n
 Writing the file to /home/hacker/n!
 ... and reading it back to you:
 pwn.college{8Se30_hY82YvdejiHGGXJe_VE4Z.dNzM4QDL1kzM2czW}
-hacker@paths~home-sweet-home:/$
+
 ```
 
 <br>
