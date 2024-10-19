@@ -417,9 +417,9 @@ pwn.college{gw27MfcyN6MgolCe7SoaGmTm4rF.dFTN1QDL1kzM2czW}
 # Challenge 9-home sweet home
 In this challenge, we are required to invoke /challenge/run which will write a copy of the flag to any file.
 
-1.Your argument must be an absolute path.\n
-2.The path must be inside your home directory.\n
-3.Before expansion, your argument must be three characters or less.\n
+1.Your argument must be an absolute path.<br>
+2.The path must be inside your home directory.<br>
+3.Before expansion, your argument must be three characters or less.
 
 ## Challenge Description
 Every user has a home directory, typically under /home in the filesystem. In the dojo, you are the hacker user, and your home directory is /home/hacker. The home directory is typically where users store most of their personal files. As you make your way through pwn.college, this is where you'll store most of your solutions.
