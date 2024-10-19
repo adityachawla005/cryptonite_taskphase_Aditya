@@ -1,34 +1,64 @@
 # Challenge 1-Learning from Documentation
-This challenge guides us on how to use documentation to run certain programs.
+This challenge required the use of globbing to change directory.
 
 ## Challenge Description
-The typical need you'll have for documentation is just to figure out how to use all these dang programs, and a specific case of that is figuring out what arguments to specify on the command line. This module will mostly dig into that concept, as a proxy for figuring out how to use the programs in general. Through the rest of the module, you'll go through various ways of asking the environment for help for the programs, but first, we'll dig into the concept of reading documentation.
-
-The correct usage of programs depends, in a large part, in the proper specification of arguments to them. Recall the -a of ls -a in the hidden files challenge of the Basic Commands module: that -a was an argument that told ls to list out hidden files as well as non-hidden files. Because we wanted to list out hidden files, invoking ls with the -a argument was the correct way to use it in our scenario.
-
-The program for this challenge is /challenge/challenge, and you'll need to invoke it properly in order for it to give you the flag. Let's pretend that this is its documentation:
-
-    Welcome to the documentation for /challenge/challenge! To properly run this program, you will need to pass it the argument of --giveflag. Good luck!
-
-Given that knowledge, go get the flag!
-
+The first glob we'll learn is *. When it encounters a * character in any argument, the shell will treat it as "wildcard" and try to replace that argument with any files that match the pattern. It's easier to show you than explain:
+```bash
+hacker@dojo:~$ touch file_a
+hacker@dojo:~$ touch file_b
+hacker@dojo:~$ touch file_c
+hacker@dojo:~$ ls
+file_a	file_b	file_c
+hacker@dojo:~$ echo Look: file_*
+Look: file_a file_b file_c
+```
+Of course, though in this case, the glob resulted in multiple arguments, it can just as simply match only one. For example:
+```bash
+hacker@dojo:~$ touch file_a
+hacker@dojo:~$ ls
+file_a
+hacker@dojo:~$ echo Look: file_*
+Look: file_a
+```
+When zero files are matched, by default, the shell leaves the glob unchanged:
+```bash
+hacker@dojo:~$ touch file_a
+hacker@dojo:~$ ls
+file_a
+hacker@dojo:~$ echo Look: nope_*
+Look: nope_*
+```
+The * matches any part of the filename except for / or a leading . character. For example:
+```bash
+hacker@dojo:~$ echo ONE: /ho*/*ck*
+ONE: /home/hacker
+hacker@dojo:~$ echo TWO: /*/hacker
+TWO: /home/hacker
+hacker@dojo:~$ echo THREE: ../*
+THREE: ../hacker
+```
+Now, practice this yourself! Starting from your home directory, change your directory to /challenge, but use globbing to keep the argument you pass to cd to at most four characters! Once you're there, run /challenge/run for the flag!
 
 ## Solution
 
-Invoking the /challenge/challenge with --giveflag argument.
+Change the directory to /challenge using globbing and then invoke /challenge/run.
 
  ```bash
 Connected!
-hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag
-Correct argument! Here is your flag:
-pwn.college{EoZopqIEMdFvujIxO8vgqO8aswg.dRjM5QDL1kzM2czW}
+This challenge resets your working directory to /home/hacker unless you change 
+directory properly...
+hacker@globbing~matching-with-:~$ cd /ch*
+hacker@globbing~matching-with-:/challenge$ /challenge/run
+You ran me with the working directory of /challenge! Here is your flag:
+pwn.college{onMfAgKL3_LCyxsIihalLttXtXr.dFjM4QDL1kzM2czW}
+
 
 ```
 
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Digesting%20Documentation/assets/1.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/File%20Globbing/assets/1.png)
 
 <br>
 <br>
