@@ -355,3 +355,103 @@ hacker@man~searching-for-manuals:~$
 <br>
 <br>
 <br>
+
+# Challenge 6-Helpful Programs
+This challenge required the use of --help argument to read documentation.
+
+## Challenge Description
+Some programs don't have a man page, but might tell you how to run them if invoked with a special argument. Usually, this argument is --help, but it can often be -h or, in rare cases, -?, help, or other esoteric values like /? (though that latter is more frequently encountered on Windows).
+
+In this level, you will practice reading a program's documentation with --help. Try it out!
+
+Given that knowledge, go get the flag!
+
+
+## Solution
+using --help with /challenge/challenge program and then following the manual by using -p tag to to get the flag value for -g argument. 
+
+ ```bash
+hacker@man~helpful-programs:~$ challenge --help
+ssh-entrypoint: challenge: command not found
+hacker@man~helpful-programs:~$ /challenge/challenge --help
+usage: a challenge to make you ask for help [-h] [--fortune] [-v]
+                                            [-g GIVE_THE_FLAG] [-p]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fortune             read your fortune
+  -v, --version         get the version number
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
+                        get the flag, if given the correct value
+  -p, --print-value     print the value that will cause the -g option to
+                        give you the flag
+hacker@man~helpful-programs:~$ /challenge/challenge -p
+The secret value is: 58
+hacker@man~helpful-programs:~$ /challenge/challenge -g 58
+Correct usage! Your flag: pwn.college{UX0SFVKqAOSE5HPnFcSuS8ax1QB.ddjM4QDL1kzM2czW}
+
+
+```
+
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Digesting%20Documentation/assets/6.png)
+
+<br>
+<br>
+<br>
+<br>
+
+# Challenge 7-Help for BuiltIns
+This challenge required the use of help with builtin programs.
+
+## Challenge Description
+Some commands, rather than being programs with man pages and help options, are built into the shell itself. These are called builtins. Builtins are invoked just like commands, but the shell handles them internally instead of launching other programs. You can get a list of shell builtins by running the builtin help, as so:
+
+hacker@dojo:~$ help
+
+You can get help on a specific one by passing it to the help builtin. Let's look at a builtin that we've already used earlier, cd!
+
+```bash
+hacker@dojo:~$ help cd
+cd: cd [-L|[-P [-e]] [-@]] [dir]
+    Change the shell working directory.
+    
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
+...
+```
+
+Some good information! In this challenge, we'll practice using help to look up help for builtins. This challenge's challenge command is a shell builtin, rather than a program. Like before, you need to lookup its help to figure out the secret value to pass to it!
+
+## Solution
+using help challenge as challenge is a builtin program.
+Further,using the argument and value with challenge program to getr the flag.
+
+ ```bash
+Connected!
+hacker@man~help-for-builtins:~$ help challenge
+challenge: challenge [--fortune] [--version] [--secret SECRET]
+    This builtin command will read you the flag, given the right arguments!
+    
+    Options:
+      --fortune		display a fortune
+      --version		display the version
+      --secret VALUE	prints the flag, if VALUE is correct
+
+    You must be sure to provide the right value to --secret. That value
+    is "QUv0xBfE".
+hacker@man~help-for-builtins:~$ /challenge/challenge --secret QUv0xBfE
+ssh-entrypoint: /challenge/challenge: No such file or directory
+hacker@man~help-for-builtins:~$ challenge --secret QUv0xBfE
+Correct! Here is your flag!
+pwn.college{QUv0xBfE50veFZyLZwjVNQn8-Wx.dRTM5QDL1kzM2czW}
+
+hacker@man~help-for-builtins:~$ 
+
+```
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Digesting%20Documentation/assets/7.png)
