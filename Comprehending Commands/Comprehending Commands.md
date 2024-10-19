@@ -490,7 +490,7 @@ It is: pwn.college{Q5a-bYwjjdPzcuuYO6hrXn_iAlD.dljM4QDL1kzM2czW}
 <br>
 
 # Challenge 10-making directories
-This level required the use of making directories using mkdir command.
+This level required the use of mkdir command to make directories.
 
 ## Challenge Description
 We can create files. How about directories? You make directories using the mkdir command. Then you can stick files in there!
@@ -543,3 +543,178 @@ pwn.college{wcaFX1YIIcUPLx6viWOQ94q9fcG.dFzM4QDL1kzM2czW}
 <br>
 <br>
 <br>
+
+# Challenge 11-finding files
+This level required the use of find command to look for a file in a directory.
+
+## Challenge Description
+So now we know how to list, read, and create files. But how do we find them? We use the find command!
+
+The find command takes optional arguments describing the search criteria and the search location. If you don't specify a search criteria, find matches every file. If you don't specify a search location, find uses the current working directory (.). For example:
+
+```bash
+hacker@dojo:~$ mkdir my_directory
+hacker@dojo:~$ mkdir my_directory/my_subdirectory
+hacker@dojo:~$ touch my_directory/my_file
+hacker@dojo:~$ touch my_directory/my_subdirectory/my_subfile
+hacker@dojo:~$ find
+.
+./my_directory
+./my_directory/my_subdirectory
+./my_directory/my_subdirectory/my_subfile
+./my_directory/my_file
+hacker@dojo:~$
+```
+
+And when specifying the search location:
+
+```bash
+hacker@dojo:~$ find my_directory/my_subdirectory
+my_directory/my_subdirectory
+my_directory/my_subdirectory/my_subfile
+hacker@dojo:~$
+```
+
+And, of course, we can specify the criteria! For example, here, we filter by name:
+
+```bash
+hacker@dojo:~$ find -name my_subfile
+./my_directory/my_subdirectory/my_subfile
+hacker@dojo:~$ find -name my_subdirectory
+./my_directory/my_subdirectory
+hacker@dojo:~$
+```
+
+You can search the whole filesystem if you want!
+
+```bash
+hacker@dojo:~$ find / -name hacker
+/home/hacker
+hacker@dojo:~$
+```
+
+Now it's your turn. I've hidden the flag in a random directory on the filesystem. It's still called flag. Go find it!
+
+Several notes. First, there are other files named flag on the filesystem. Don't panic if the first one you try doesn't have the actual flag in it. Second, there're plenty of places in the filesystem that are not accessible to a normal user. These will cause find to generate errors, but you can ignore those; we won't hide the flag there! Finally, find can take a while; be patient!
+
+## Solution
+
+Using the file command with -name argument to find the flag file globally and using cat with absolute path to view it.
+
+ ```bash
+ Connected!  
+hacker@commands~finding-files:~$ find / -name flag
+find: ‘/root’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/tmp/tmp.G9qthVCks5’: Permission denied
+/usr/local/share/radare2/5.9.5/flag
+/usr/local/lib/python3.8/dist-packages/pwnlib/flag
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/apache2’: Permission denied
+find: ‘/var/log/mysql’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/mysql-keyring’: Permission denied
+find: ‘/var/lib/php/sessions’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/mysql-files’: Permission denied
+find: ‘/var/lib/mysql’: Permission denied
+find: ‘/run/mysqld’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1/task/1/fd’: Permission denied
+find: ‘/proc/1/task/1/fdinfo’: Permission denied
+find: ‘/proc/1/task/1/ns’: Permission denied
+find: ‘/proc/1/fd’: Permission denied
+find: ‘/proc/1/map_files’: Permission denied
+find: ‘/proc/1/fdinfo’: Permission denied
+find: ‘/proc/1/ns’: Permission denied
+find: ‘/proc/7/task/7/fd’: Permission denied
+find: ‘/proc/7/task/7/fdinfo’: Permission denied
+find: ‘/proc/7/task/7/ns’: Permission denied
+find: ‘/proc/7/fd’: Permission denied
+find: ‘/proc/7/map_files’: Permission denied
+find: ‘/proc/7/fdinfo’: Permission denied
+find: ‘/proc/7/ns’: Permission denied
+/opt/busybox/busybox-1.33.2/shell/ash_test/ash-quoting/flag
+/opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag
+/opt/radare2/libr/flag
+/nix/store/pmvk2bk4p550w182rjfm529kfqddnvh3-python3.11-pwntools-4.12.0/lib/python3.11/site-packages/pwnlib/flag
+/nix/store/1yagn5s8sf7kcs2hkccgf8d0wxlrv5sz-radare2-5.9.0/share/radare2/5.9.0/flag
+hacker@commands~finding-files:~$ cat /opt/radare2/libr/flag
+cat: /opt/radare2/libr/flag: Is a directory
+hacker@commands~finding-files:~$ ^C
+hacker@commands~finding-files:~$ cat /nix/store/pmvk2bk4p550w182rjfm529kfqddnvh3-python3.11-pwntools-4.12.0/lib/python3.11/site-packages/pwnlib/flag
+cat: /nix/store/pmvk2bk4p550w182rjfm529kfqddnvh3-python3.11-pwntools-4.12.0/lib/python3.11/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ ^C
+hacker@commands~finding-files:~$ cat /opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag
+cat: /opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cat /opt/busybox/busybox-1.33.2/shell/ash_test/ash-quoting/flag
+pwn.college{018KT_CblKkMSc-IOtdLZf3fwgr.dJzM4QDL1kzM2czW}
+
+```
+
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Comprehending%20Commands/assets/11.png)
+
+<br>
+<br>
+<br>
+<br>
+
+# Challenge 12-linking files
+This level explained the concept of hard and soft links along with creation of a symlink using ln -s command.
+
+## Challenge Description
+
+If you use Linux (or computers) for any reasonable length of time to do any real work, you will eventually run into some variant of the following situation: you want two programs to access the same data, but the programs expect that data to be in two different locations. Luckily, Linux provides a solution to this quandry: links.
+
+Links come in two flavors: hard and soft (also known as symbolic) links. We'll differentiate the two with an analogy:
+
+    A hard link is when you address your appartment using multiple addresses that all lead directly to the same place (e.g., Apt 2 vs Unit 2).
+    A soft link is when you move appartments and have the postal service automatically forward your mail from your old place to your new place.
+
+In a filesystem, a file is, conceptually, an address at which the contents of that file live. A hard link is an alternate address that indexes that data --- accesses to the hard link and accesses to the original file are completely identical, in that they immediate yield the necessary data. A soft/symbolic link, instead, contains the original file name. When you access the symbolic link, Linux will realize that it is a symbolic link, read the original file name, and then (typically) automatically access that file. In most cases, both situations result in accessing the original data, but the mechanisms are different.
+
+Hard links sound simpler to most people (case in point, I explained it in one sentence above, versus two for soft links), but they have various downsides and implementation gotchas that make soft/symbolic links, by far, the more popular alternative.
+
+In this challenge, we will learn about symbolic links (also also known as symlinks). Symbolic links are created with the ln command with the -s argument, like so:
+```bash
+hacker@dojo:~$ cat /tmp/myfile
+This is my file!
+hacker@dojo:~$ ln -s /tmp/myfile /home/hacker/ourfile
+hacker@dojo:~$ cat ~/ourfile
+This is my file!
+hacker@dojo:~$
+```
+You can see that accessing the symlink results in getting the original file contents! Also, you can see the usage of ln -s. Note that the original file path comes before the link path in the command!
+
+A symlink can be identified as such with a few methods. For example, the file command, which takes a filename and tells you what type of file it is, will recognize symlinks:
+```bash
+hacker@dojo:~$ file /tmp/myfile
+/tmp/myfile: ASCII text
+hacker@dojo:~$ file ~/ourfile
+/home/hacker/ourfile: symbolic link to /tmp/myfile
+hacker@dojo:~$
+```
+Okay, now you try it! In this level the flag is, as always, in /flag, but /challenge/catflag will instead read out /home/hacker/not-the-flag. Use the symlink, and fool it into giving you the flag!
+
+## Solution
+Using the ln -s command to create a symbolic link between flag and not-the-flag and using /challenge/catflag to read not-the-flag.
+
+ ```bash
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{Q3anmxSVTNKXL6zqznVtoHEmtOg.dlTM1UDL1kzM2czW}
+
+```
+
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Comprehending%20Commands/assets/12.png)
