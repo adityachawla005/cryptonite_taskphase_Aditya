@@ -63,7 +63,7 @@ pwn.college{8bE_Guw-65nXus-7qCFzXJSjM5E.dVDN1QDL1kzM2czW}
 <br>
 <br>
 
-# Challenge 3-Program and absolute Paths
+# Challenge 3-Position thy self
 This level required navigating to a specific directory to invoke the /challenge/run program. 
 
 ## Challenge Description
@@ -110,7 +110,7 @@ pwn.college{kFBB5Zt9ZwFPazpn9tqa3YxQPVb.dZDN1QDL1kzM2czW}
 <br>
 <br>
 
-# Challenge 3-Program and absolute Paths
+# Challenge 4-Position elsewhere
 This level required navigating to a specific directory to invoke the /challenge/run program. 
 
 ## Challenge Description
@@ -151,4 +151,104 @@ pwn.college{I5wcfMoMs9aaPzgIbhZPifsnznX.ddDN1QDL1kzM2czW}
 <br>
 
 ![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/4.png)
+
+<br>
+<br>
+<br>
+<br>
+
+# Challenge 5-Position yet elsewhere
+This level required navigating to a specific directory to invoke the /challenge/run program. 
+
+## Challenge Description
+The Linux filesystem has tons of directories with tons of files. You can navigate around directories by using the cd (change directory) command and passing a path to it as an argument, as so:
+
+```bash
+hacker@dojo:~$ cd /some/new/directory
+hacker@dojo:/some/new/directory$ cd /some/new/directory
+```
+
+This affects the "current working directory" of your process (in this case, the bash shell). Each process has a directory in which it's currently hanging out. The reasons for this will become clear later in the module.
+
+As an aside, now you can see what the ~ was in the prompt! It shows the current path that your shell is located at.
+
+This challenge will require you to execute the /challenge/run program from a specific path (which it will tell you). You'll need to cd to that directory before rerunning the challenge program. Good luck!
+
+## Solution
+
+Using cd to navigate to the specific path and then invoking the /challenge/run program.
+
+
+ ```bash
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /etc directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /etc
+hacker@paths~position-yet-elsewhere:/etc$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{EcKfy5VpjgpszaFNjJ1xJ6PB0_H.dhDN1QDL1kzM2czW}
+
+
+```
+
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/5.png)
+
+<br>
+<br>
+<br>
+<br>
+
+# Challenge 6-implicit relative paths,from /
+This level required navigating to a specific directory to invoke the /challenge/run program. 
+
+## Challenge Description
+Now you're familiar with the concept of referring to absolute paths and changing directories. If you put in absolute paths everywhere, then it really doesn't matter what directory you are in, as you likely found out in the previous three challenges.
+
+However, the current working directory does matter for relative paths.
+
+
+    A relative path is any path that does not start at root (i.e., it does not start with /).
+    A relative path is interpreted relative to your current working directory (cwd).
+    Your cwd is the directory that your prompt is currently located at.
+
+This means how you specify a particular file, depends on where the terminal prompt is located.
+
+Imagine we want to access some file located at /tmp/a/b/my_file.
+
+    If my cwd is /, then a relative path to the file is tmp/a/b/my_file.
+    If my cwd is /tmp, then a relative path to the file is a/b/my_file.
+    If my cwd is /tmp/a/b/c, then a relative path to the file is ../my_file. The .. refers to the parent directory.
+
+Let's try it here! You'll need to run /challenge/run using a relative path while having a current working directory of /. For this level, I'll give you a hint. Your relative path starts with the letter c 😊
+## Solution
+
+Using cd to navigate to the specific path and then invoking the /challenge/run program.
+
+
+ ```bash
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /etc directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /etc
+hacker@paths~position-yet-elsewhere:/etc$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{EcKfy5VpjgpszaFNjJ1xJ6PB0_H.dhDN1QDL1kzM2czW}
+
+
+```
+
+<br>
+<br>
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/5.png)
+
 
