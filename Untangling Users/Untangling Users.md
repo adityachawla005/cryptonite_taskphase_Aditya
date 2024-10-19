@@ -100,9 +100,9 @@ This challenge required the use of cracking the password using John the Ripper a
 When you enter a password for su, it compares it against the stored password for that user. These passwords used to be stored in /etc/passwd, but because /etc/passwd is a globally-readable file, this is not good for passwords, these were moved to /etc/shadow. Here is the example /etc/shadow from the previous level:
 
 root:$6$s74oZg/4.RnUvwo2$hRmCHZ9rxX56BbjnXcxa0MdOsW2moiW8qcAl/Aoc7NEuXl2DmJXPi3gLp7hmyloQvRhjXJ.wjqJ7PprVKLDtg/:19921:0:99999:7:::
-daemon:*:19873:0:99999:7:::
-bin:*:19873:0:99999:7:::
-sys:*:19873:0:99999:7:::
+daemon:*:19873:0:99999:7::: <br>
+bin:*:19873:0:99999:7:::<br>
+sys:*:19873:0:99999:7:::<br>
 sync:*:19873:0:99999:7:::
 games:*:19873:0:99999:7:::
 man:*:19873:0:99999:7:::
