@@ -8,10 +8,6 @@ You can invoke a program by providing its path on the command line. In this case
 
 Start the challenge, launch a terminal, invoke the pwn program using its absolute path, and Capture that Flag! Good luck!
 
-In this case, the command was echo, and Hello and Hackers! were the two arguments to echo. Simple!
-
-In this challenge, to get the flag, you must run the hello command (NOT the echo command) with a single argument of hackers. Try it now!
-
 ## Solution
 
 Writing the absolute path starting from the root directory to invoking pwn.
@@ -34,23 +30,24 @@ hacker@paths~the-root:~$
 <br>
 
 # Challenge 2-Program and absolute Paths
-This level required the use of invoking run program within challenge directory and th challenge directory is,in turn,in the root directory
+This level required the use of invoking run program within challenge directory and the challenge directory is,in turn,in the root directory.
 
 ## Challenge Description
-Let's explore a slightly more complicated path! Except for in the previous level, challenges in pwn.college are in the challenge directory and the challenge directory is, in turn, right in the root directory (/). The path to the challenge the directory 
+Let's explore a slightly more complicated path! Except for in the previous level, challenges in pwn.college are in the challenge directory and the challenge directory is, in turn, right in the root directory (/). The path to the challenge the directory is, thus, /challenge. The name of the challenge program in this level is run, and it lives in the /challenge directory. Thus, the path to the run challenge program is /challenge/run.
 
-is, thus, /challenge. The name of the challenge program in this level is run, and it lives in the /challenge directory. Thus, the path to the run challenge program is /challenge/run.
+This challenge again requires you to execute it by invoking its absolute path. You'll want to execute the run file that is in the challenge directory that is, in turn, in the / directory. If you invoke the challenge correctly, it will give you the flag. Good luck!
 
-This challenge again requires you to execute it by invoking its absolute path. You'll want to execute the run file that is in the challenge directory that is, in turn, in the / directory. If you invoke the challenge correctly, it will give you the 
+## Solution
 
-flag. Good luck!
+Writing the absolute path starting from root directory to challenge and invoking run program.
+
 
  ```bash
-hacker@paths~the-root:~$ /pwn
-BOOM!!!
-Here is your flag:
-pwn.college{QjppxbTA2-g-MtPPMXn1VdBzrc-.dhzN5QDL1kzM2czW}
-hacker@paths~the-root:~$ 
+Connected!
+hacker@paths~program-and-absolute-paths:~$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path! Here is your flag:
+pwn.college{8bE_Guw-65nXus-7qCFzXJSjM5E.dVDN1QDL1kzM2czW}
 
 ```
 
@@ -58,3 +55,8 @@ hacker@paths~the-root:~$
 <br>
 
 ![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/2.png)
+
+<br>
+<br>
+
+
