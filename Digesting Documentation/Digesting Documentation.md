@@ -265,6 +265,9 @@ Correct usage! Your flag: pwn.college{0xVPv0b1_5jyshHdOZNgsEUgfYP.dVTM4QDL1kzM2c
 <br>
 
 # Challenge 5-Searching for manuals
+This level required us to use man man command and man -k command to find the correct manual and get the flag.
+
+## Challenge Description
 This level is tricky: it hides the manpage for the challenge by randomizing its name. Luckily, all of the man pages are gathered in a searchable database, so you'll be able to search the man page database to find the hidden challenge man page! To figure out how to search for the right man page, read the man page manpage by doing: man man!
 
 HINT 1: man man teaches you advanced usage of the man command itself, and you must use this knowledge to figure out how to search for the hidden manpage that will tell you how to use /challenge/challenge
@@ -273,19 +276,80 @@ HINT 2: though the man page is randomly named, you still actually use /challenge
 
 ## Solution
 
+First using man man to view different manuals.
 
  ```bash
 Connected!
-hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag
-Correct argument! Here is your flag:
-pwn.college{EoZopqIEMdFvujIxO8vgqO8aswg.dRjM5QDL1kzM2czW}
+hacker@man~searching-for-manuals:~$ man man
+MAN(1)                        Manual pager utils                        MAN(1)
 
+NAME
+       man - an interface to the system reference manuals
+
+SYNOPSIS
+       man [man options] [[section] page ...] ...
+       man -k [apropos options] regexp ...
+       man -K [man options] [section] term ...
+       man -f [whatis options] page ...
+       man -l [man options] file ...
+       man -w|-W [man options] page ...
+
+DESCRIPTION
+       man  is  the system's manual pager.  Each page argument given to man is
+       normally the name of a program, utility or function.  The  manual  page
+       associated with each of these arguments is then found and displayed.  A
+       section, if provided, will direct man to look only in that  section  of
+       the  manual.   The  default action is to search in all of the available
+       sections following a pre-defined order (see DEFAULTS), and to show only
+       the first page found, even if page exists in several sections.
+
+
+```
+For finding challenge man page,using man -k challenge:
+
+```bash
+hacker@man~searching-for-manuals:~$ man -k challenge
+ocjynkkbsi (1)       - print the flag!
+```
+Now viewing the man page for the keyword:
+
+```bash
+hacker@man~searching-for-manuals:~$ man ocjynkkbsi
+
+CHALLENGE(1)                  Challenge Commands                  CHALLENGE(1)
+
+NAME
+       /challenge/challenge - print the flag!
+
+SYNOPSIS
+       challenge OPTION
+
+DESCRIPTION
+       Output the flag when called with the right arguments.
+
+       --fortune
+              read a fortune
+
+       --version
+              output version information and exit
+
+       --ocjynk NUM
+              print the flag if NUM is 840
+
+AUTHOR
+       Written by Zardus.
+```
+Printing the flag:
+```bash
+hacker@man~searching-for-manuals:~$ /challenge/challenge --ocjynk 840
+Correct usage! Your flag: pwn.college{UASBIo8Gc-jyBU4nO0-kkb2Fsie.dZTM4QDL1kzM2czW}
+hacker@man~searching-for-manuals:~$ 
 ```
 
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Digesting%20Documentation/assets/1.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Digesting%20Documentation/assets/5.png)
 
 <br>
 <br>
