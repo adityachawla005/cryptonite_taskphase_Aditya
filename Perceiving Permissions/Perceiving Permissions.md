@@ -73,7 +73,7 @@ hacker@permissions~changing-file-ownership:~$
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-1.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-1.png)
 
 <br>
 <br>
@@ -160,7 +160,7 @@ pwn.college{g5CJkttIDzeKPhYJOF-dYuKcvrD.dFzNyUDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-2.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-2.png)
 
 <br>
 <br>
@@ -194,7 +194,7 @@ pwn.college{kPys8tPF2dsMbIfQ6bitPdBn6aZ.dJzNyUDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-3.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-3.png)
 
 <br>
 <br>
@@ -307,7 +307,7 @@ hacker@permissions~changing-permissions:~$
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-4.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-4.png)
 
 <br>
 <br>
@@ -360,7 +360,7 @@ pwn.college{MP-f3V3stzgjEszwirPWmAuUNPk.dJTM2QDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-5.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-5.png)
 
 <br>
 <br>
@@ -609,7 +609,7 @@ hacker@permissions~permission-tweaking-practice:~$
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-6.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-6.png)
 
 <br>
 <br>
@@ -871,7 +871,7 @@ hacker@permissions~permissions-setting-practice:~$
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-7.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-7.png)
 
 <br>
 <br>
@@ -923,7 +923,7 @@ root@permissions~the-suid-bit:~#
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Processes%20and%20Jobs/assets/o-8.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Perceiving%20Permissions/assets/o-8.png)
 
 <br>
 <br>
