@@ -1,4 +1,4 @@
-# Challenge 1-Learning from Documentation
+# Challenge 1-Matching with * 
 This challenge required the use of globbing to change directory.
 
 ## Challenge Description
