@@ -406,7 +406,7 @@ This challenge required the use of & argument with the command to start a backgr
 
 ## Challenge Description
 Of course, you don't have to suspend processes to background them: you can start the backgrounded right off the bat! It's easy; all you have to do is append a & to the command, like so:
-
+```bash
 hacker@dojo:~$ sleep 1337 &
 [1] 1771
 hacker@dojo:~$ ps -o user,pid,stat,cmd
@@ -415,7 +415,7 @@ hacker      1709 Ss   bash
 hacker      1771 S    sleep 1337
 hacker      1782 R+   ps -o user,pid,stat,cmd
 hacker@dojo:~$ 
-
+```
 Here, sleep is actively running in the background, not suspended. Now it's your turn to practice! Launch /challenge/run backgrounded for the flag!
 
 ## Solution
@@ -453,7 +453,7 @@ This challenge required the use of $? to get the exit code of a process.
 Every shell command, including every program and every builtin, exits with an exit code when it finishes running and terminates, This can be used by the shell, or the user of the shell (that's you!) to check if the process succeeded in its functionality (this determination, of course, depends on what the process is supposed to do in the first place).
 
 You can access the exit code of the most recently-terminated command using the special ? variable (don't forget to prepend it with $ to read its value!):
-
+```bash
 hacker@dojo:~$ touch test-file
 hacker@dojo:~$ echo $?
 0
@@ -462,7 +462,7 @@ touch: cannot touch '/test-file': Permission denied
 hacker@dojo:~$ echo $?
 1
 hacker@dojo:~$
-
+```
 As you can see, commands that succeed typically return 0 and commands that fail typically return a non-zero value, most commonly 1 but sometimes an error code that identifies a specific failure mode.
 
 In this challenge, you must retrieve the exit code returned by /challenge/get-code and then run /challenge/submit-code with that error code as an argument. Good luck!
