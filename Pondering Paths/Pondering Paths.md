@@ -133,16 +133,16 @@ Using cd to navigate to the specific path and then invoking the /challenge/run p
 
 
  ```bash
-hacker@paths~position-thy-self:~$ /challenge/run
+hacker@paths~position-elsewhere:~$ /challenge/run
 Incorrect...
-You are not currently in the /usr/aarch64-linux-gnu/include/gnu directory.
+You are not currently in the /proc/67 directory.
 Please use the `cd` utility to change directory appropriately.
-hacker@paths~position-thy-self:~$ cd /usr/aarch64-linux-gnu/include/gnu
-hacker@paths~position-thy-self:/usr/aarch64-linux-gnu/include/gnu$ /challenge/run
+hacker@paths~position-elsewhere:~$ cd /proc/67
+hacker@paths~position-elsewhere:/proc/67$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path, invoked from the right directory!
 Here is your flag:
-pwn.college{kFBB5Zt9ZwFPazpn9tqa3YxQPVb.dZDN1QDL1kzM2czW}
+pwn.college{I5wcfMoMs9aaPzgIbhZPifsnznX.ddDN1QDL1kzM2czW}
 
 
 ```
@@ -150,5 +150,5 @@ pwn.college{kFBB5Zt9ZwFPazpn9tqa3YxQPVb.dZDN1QDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/3.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/4.png)
 
