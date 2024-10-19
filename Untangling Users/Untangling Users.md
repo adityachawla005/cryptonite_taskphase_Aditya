@@ -99,32 +99,32 @@ This challenge required the use of cracking the password using John the Ripper a
 ## Challenge Description
 When you enter a password for su, it compares it against the stored password for that user. These passwords used to be stored in /etc/passwd, but because /etc/passwd is a globally-readable file, this is not good for passwords, these were moved to /etc/shadow. Here is the example /etc/shadow from the previous level:
 
-root:$6$s74oZg/4.RnUvwo2$hRmCHZ9rxX56BbjnXcxa0MdOsW2moiW8qcAl/Aoc7NEuXl2DmJXPi3gLp7hmyloQvRhjXJ.wjqJ7PprVKLDtg/:19921:0:99999:7:::
+root:$6$s74oZg/4.RnUvwo2$hRmCHZ9rxX56BbjnXcxa0MdOsW2moiW8qcAl/Aoc7NEuXl2DmJXPi3gLp7hmyloQvRhjXJ.wjqJ7PprVKLDtg/:19921:0:99999:7:::<br>
 daemon:*:19873:0:99999:7::: <br>
 bin:*:19873:0:99999:7:::<br>
 sys:*:19873:0:99999:7:::<br>
-sync:*:19873:0:99999:7:::
-games:*:19873:0:99999:7:::
-man:*:19873:0:99999:7:::
-lp:*:19873:0:99999:7:::
-mail:*:19873:0:99999:7:::
-news:*:19873:0:99999:7:::
-uucp:*:19873:0:99999:7:::
-proxy:*:19873:0:99999:7:::
-www-data:*:19873:0:99999:7:::
-backup:*:19873:0:99999:7:::
-list:*:19873:0:99999:7:::
-irc:*:19873:0:99999:7:::
-gnats:*:19873:0:99999:7:::
-nobody:*:19873:0:99999:7:::
-_apt:*:19873:0:99999:7:::
-systemd-timesync:*:19901:0:99999:7:::
-systemd-network:*:19901:0:99999:7:::
-systemd-resolve:*:19901:0:99999:7:::
-mysql:!:19901:0:99999:7:::
-messagebus:*:19901:0:99999:7:::
-sshd:*:19901:0:99999:7:::
-hacker::19916:0:99999:7:::
+sync:*:19873:0:99999:7:::<br>
+games:*:19873:0:99999:7:::<br>
+man:*:19873:0:99999:7:::<br>
+lp:*:19873:0:99999:7:::<br>
+mail:*:19873:0:99999:7:::<br>
+news:*:19873:0:99999:7:::<br>
+uucp:*:19873:0:99999:7:::<br>
+proxy:*:19873:0:99999:7:::<br>
+www-data:*:19873:0:99999:7:::<br>
+backup:*:19873:0:99999:7:::<br>
+list:*:19873:0:99999:7:::<br>
+irc:*:19873:0:99999:7:::<br>
+gnats:*:19873:0:99999:7:::<br>
+nobody:*:19873:0:99999:7:::<br>
+_apt:*:19873:0:99999:7:::<br>
+systemd-timesync:*:19901:0:99999:7:::<br>
+systemd-network:*:19901:0:99999:7:::<br>
+systemd-resolve:*:19901:0:99999:7:::<br>
+mysql:!:19901:0:99999:7:::<br>
+messagebus:*:19901:0:99999:7:::<br>
+sshd:*:19901:0:99999:7:::<br>
+hacker::19916:0:99999:7:::<br>
 zardus:$6$bEFkpM0w/6J0n979$47ksu/JE5QK6hSeB7mmuvJyY05wVypMhMMnEPTIddNUb5R9KXgNTYRTm75VOu1oRLGLbAql3ylkVa5ExuPov1.:19921:0:99999:7:::
 
 Separated by :s, the first field of each line is the username and the second is the password. A value of * or ! functionally means that password login for the account is disabled, a blank field means that there is no password (a not-uncommon misconfiguration that allows password-less su in some configurations), and the long string such as Zardus' $6$bEFkpM0w/6J0n979$47ksu/JE5QK6hSeB7mmuvJyY05wVypMhMMnEPTIddNUb5R9KXgNTYRTm75VOu1oRLGLbAql3ylkVa5ExuPov1. is the result of one-way-encrypting (hashing) Zardus' password from the last level (in this case, dont-hack-me). Other fields in this file have other meanings, and you can read more about them here.
