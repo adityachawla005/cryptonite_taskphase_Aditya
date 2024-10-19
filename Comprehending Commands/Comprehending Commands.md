@@ -44,4 +44,4 @@ pwn.college{4VQhCrQjskrYC-bzBM0PyXwCOZs.dFzN1QDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Pondering%20Paths/assets/1.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Comprehending%20Commands/assets/1.png)
