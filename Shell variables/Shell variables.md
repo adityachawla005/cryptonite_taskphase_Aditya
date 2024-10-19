@@ -314,7 +314,7 @@ hacker@variables~reading-input:~$
 <br>
 
 
-# Challenge 7-Reading Files
+# Challenge 8-Reading Files
 This challenge required the use of read command to sstore a file in a variable.
 
 ## Challenge Description
