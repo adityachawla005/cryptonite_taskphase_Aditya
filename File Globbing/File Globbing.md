@@ -209,6 +209,13 @@ Connected!
 hacker@globbing~mixing-globs:~$ cd /challenge/files
 hacker@globbing~mixing-globs:/challenge/files$ echo [cep]*
 challenging educational pwning
+hacker@globbing~mixing-globs:~$ cd /challenge/files
+hacker@globbing~mixing-globs:/challenge/files$ /challenge/run [cep]*
+You got it! Here is your flag!
+pwn.college{sbc9C1MF94xkaucjl3uSPUqn-R_.dVjM4QDL1kzM2czW}
+hacker@globbing~mixing-globs:/challenge/files$ 
+
+
 
 ```
 
