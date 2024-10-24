@@ -424,7 +424,7 @@ hacker@piping~grepping-errors:~$
 <br>
 <br>
 
-# Challenge 9-Duplicating piped date with tee
+# Challenge 9-Duplicating piped data with tee
 This challenge required the use of tee command to intercept the input going from one program to another via piping.
 
 ## Challenge Description
