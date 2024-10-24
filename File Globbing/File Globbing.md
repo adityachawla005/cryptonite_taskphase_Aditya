@@ -268,4 +268,4 @@ pwn.college{g_J1sxp2FOPyvmV5WCXcPbKvZD6.dZjM4QDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/File%20Globbing/assets/5.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/File%20Globbing/assets/6.png)
