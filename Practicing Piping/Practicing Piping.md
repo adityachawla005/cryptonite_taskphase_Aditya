@@ -31,7 +31,6 @@ pwn.college{gjIQ9oGr6CCirLUbazGp-ceODYc.dRjN1QDL1kzM2czW}
 <br>
 <br>
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/Practicing%20Piping/assets/c-1.png)
 
 <br>
 <br>
