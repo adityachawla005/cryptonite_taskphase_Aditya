@@ -66,7 +66,7 @@ class VaultDoor1 {
 ```
 
 
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/TP2/Reverse Engineering/picoCTF/assets/door1.png)
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/TP2/Reverse%20Engineering/picoCTF/assets/door1.png)
 
 
 
