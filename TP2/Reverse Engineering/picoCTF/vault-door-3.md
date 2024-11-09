@@ -7,10 +7,10 @@ Approach
 - step 1<br>
 The code takes user input of flag and passes it to the function .Now it scrambles the string using the function:-
 
-1.The first 8 characters of password go directly to buffer[0] to buffer[7].<br>
-2.Characters in password from index 15 down to index 8 are placed into buffer[8] to buffer[15].<br>
-3.Even positions from buffer[16] to buffer[30] are filled with characters from indices subtracted by 46.<br>
-4.Finally, buffer[31] to buffer[17] (odd positions) are set with characters directly from password.<br>
+    1.The first 8 characters of password go directly to buffer[0] to buffer[7].<br>
+    2.Characters in password from index 15 down to index 8 are placed into buffer[8] to buffer[15].<br>
+    3.Even positions from buffer[16] to buffer[30] are filled with characters from indices subtracted by 46.<br>
+    4.Finally, buffer[31] to buffer[17] (odd positions) are set with characters directly from password.<br>
 
 ```
 import java.util.*;
