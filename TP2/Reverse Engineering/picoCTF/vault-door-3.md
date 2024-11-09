@@ -11,6 +11,9 @@ The code takes user input of flag and passes it to the function .Now it scramble
   - Even positions from `buffer[16]` to `buffer[30]` are filled with characters from `password` at mirrored indices, calculated as `46 - i`.
   - Finally, `buffer[31]` to `buffer[17]` (odd positions) are set with characters directly from `password`.
 
+<br>
+<br>
+
 
 ```
 import java.util.*;
