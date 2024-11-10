@@ -97,4 +97,4 @@ Other incorrect methods you tried:
 
 References:
 <br>
--[XOR](https://codedamn.com/news/java/what-is-xor-operator-in-java)
+- [XOR](https://codedamn.com/news/java/what-is-xor-operator-in-java)
