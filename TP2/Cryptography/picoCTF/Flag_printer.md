@@ -50,8 +50,6 @@ Other incorrect methods you tried:
 <br>
 - Using sage to solve large interpolation.
 
-```
-
 
 References
 <br>
