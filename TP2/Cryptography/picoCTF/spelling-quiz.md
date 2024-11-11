@@ -34,7 +34,7 @@ for filename in files:
 - step 2<br>
 From this we can observe that the challenge is using a substitution cipher with a random key at every execution.
 
-- step 2<br>
+- step 3<br>
 So we open boxentriq cipher identifier to decoode the words given in flag and study guilde files using mono alphabetic substitution cipher.
 
 

@@ -1,66 +1,66 @@
 # Scrambled RSA
 
-**Flag:** `picoCTF{bad_1d3a5_3525501} `
+**Flag:** `picoCTF{bad_1d3a5_3525501}`
 
 Approach
 
 - step 1<br>
-We make use of an oracle based decryption system.So we write a python script to interact with the server.
+
+In this challenge ,when we send a string of characters like 'pic' to the input stream and it shows the encrypted code in scrambled form(eg.first encrypted text for c then p then i).
+So we write the script:
 
 ```
 from pwn import *
 import string
 
-remote_service = remote("mercury.picoctf.net", 61477)
+r = remote("mercury.picoctf.net", 61477)
+r.recvuntil(b"flag: ")
+flagre = r.recvline().decode()
+r.recvlines(2)
 
-remote_service.recvuntil(b"flag: ")
-encrypted_flag = remote_service.recvline().decode()
+def encrypt(data: str):
+    r.sendlineafter(b"I will encrypt whatever you give me: ", data)
+    r.recvuntil(b"Here you go: ")
+    return r.recvline().decode().strip()
 
-remote_service.recvline()
-remote_service.recvline()
+def get_unique_enc(prefix, char, seen):
+    enc = encrypt(prefix + char)
+    for seene in seen:
+        enc = enc.replace(seene, "")
+    return enc
 
-def get_encrypted_data(input_str: str):
-    remote_service.sendlineafter(b"I will encrypt whatever you give me: ", input_str)
-    remote_service.recvuntil(b"Here you go: ")
-    return remote_service.recvline().decode().strip()
+known = "picoCTF{"
+flag = ""
+cipher_map = {}
 
-def get_cipher_representation(prefix: str, character: str, seen_data: dict):
-    encrypted = get_encrypted_data(prefix + character)
-    for prev_encrypted in seen_data.keys():
-        encrypted = encrypted.replace(prev_encrypted, "")
-    return encrypted
+for char in known:
+    enc = get_unique_enc(flag, char, cipher_map)
+    assert enc in flagre
+    cipher_map[enc] = char
+    flag += char
+    flagre = enc_flag.replace(enc, "")
 
-known_prefix = "picoCTF{"
-current_flag = ""
-cipher_dict = {}
+chars = "_}" + string.digits + string.ascii_letters
 
-for character in known_prefix:
-    encrypted_version = get_cipher_representation(current_flag, character, cipher_dict)
-    assert encrypted_version in encrypted_flag
-    cipher_dict[encrypted_version] = character
-    current_flag += character
-    encrypted_flag = encrypted_flag.replace(encrypted_version, "")
-
-possible_characters = "_}" + string.digits + string.ascii_lowercase + string.ascii_uppercase
-
-while not current_flag.endswith("}"):
-    for character in possible_characters:
-        encrypted_version = get_cipher_representation(current_flag, character, cipher_dict)
-        if encrypted_version not in encrypted_flag:
+while not flag.endswith("}"):
+    for char in chars:
+        enc = get_unique_enc(flag, char, cipher_map)
+        if enc not in flagre:
             continue
-        cipher_dict[encrypted_version] = character
-        current_flag += character
-        encrypted_flag = encrypted_flag.replace(encrypted_version, "")
-        print(current_flag)
+        cipher_map[enc] = char
+        flag += char
+        flagre = enc_flag.replace(enc, "")
+        print(flag)
         break
+
 
 ```
 
 - step 2<br>
 How this script works:It starts with a known part of the flag (picoCTF{) and iteratively guesses the remaining characters. 
 For each guess, it sends the partial flag to the server, receives the encrypted result, and checks if it matches the expected pattern. 
-By gradually building the flag character by character, it uses the server's encryption as a clue to confirm each correct character.
- The process continues until the entire flag is reconstructed.
+Checks character by character, the server's encryption is used to confirm each correct character.
+The process continues until we get the flag.
 
 
 
@@ -70,12 +70,12 @@ By gradually building the flag character by character, it uses the server's encr
 
 What you learned through solving this challenge:
 <br>
-- In this challenge ,we send a string of characters like 'pic' to the input stream and it shows the encrypted code in scrambled form(eg.first encrypted text for c then p then i).
+- We learn about encrypted scrambling and RSA encryption.
 
 
 Other incorrect methods you tried:
 <br>
-- Tried sending plaintext 'picoCTF'to deduce the pattern.
+- Tried sending plaintext to deduce the pattern.
 
 
 References
