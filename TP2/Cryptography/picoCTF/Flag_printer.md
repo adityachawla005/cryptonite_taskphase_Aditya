@@ -43,14 +43,12 @@ open('output.bmp', 'wb').write(bytearray(np.linalg.solve(GF(matrix), GF(solution
 
 What you learned through solving this challenge:
 <br>
-- Galois Fields and divide and conquer recursive algorithm approach.
+- Galois Fields,Vandermonde Matrix and divide and conquer recursive algorithm approach.
 
 
 Other incorrect methods you tried:
 <br>
 - Using sage to solve large interpolation.
-
-```
 
 
 References
