@@ -5,7 +5,7 @@
 Approach
 
 - step 1<br>
-We have been the given the script of the flag characters encoded in all number systems like hexadecimal,octal etc.
+We have been the given the script of the flag characters encoded in all number systems like hexadecimal,octal etc.We can use type casting to get flag characters.
 
 ```
 import java.util.*;
@@ -55,7 +55,7 @@ class VaultDoor4 {
 }
 ```
 
-- step 1<br>
+- step 2<br>
 The following script can be written to reveal the characters of the flag.
 
 ```

@@ -54,7 +54,7 @@ class VaultDoor6 {
 }
 ```
 
-- step 1<br>
+- step 2<br>
 The following script can be written to decode the characters of the flag.
 
 ```
