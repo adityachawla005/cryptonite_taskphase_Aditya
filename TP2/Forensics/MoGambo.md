@@ -1,0 +1,19 @@
+**Flag:** `picoCTF{1n5p3t0r_0f_h7ml_1fd8425b}`
+
+Approach
+
+- step 1<br>
+Right click on the page and Inspect Element.
+
+
+![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/TP2/Web%20Exploitation/assets/ie.png)
+
+
+What you learned through solving this challenge:
+<br>
+- We learn that flags are sometimes hidden in the Inspector tab as a comment and we can obtain by inspect element.
+
+
+References
+
+- Level Description
