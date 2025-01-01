@@ -1,4 +1,4 @@
-#Check research and Check Again
+# Check research and Check Again
 
 **Flag:** `0ctf{crc_1s_a_us5ful_m5chan1sm}`
 
@@ -21,7 +21,7 @@ References
 <br>
 
 
-#Bluetooth foir the Win
+# Bluetooth foir the Win
 
 **Flag:** ``
 
