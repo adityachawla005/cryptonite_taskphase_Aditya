@@ -1,4 +1,4 @@
-#Smoke out the rat
+# Smoke out the rat
 
 **Flag:** `VishwaCTF{Matthew_Darwin_15:31:29}`
 
