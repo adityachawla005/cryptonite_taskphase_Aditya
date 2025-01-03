@@ -506,29 +506,248 @@ What you learned through solving this challenge:
 
 # Level 6	
 
-**Flag:** ` `
+**Flag:** `pwn.college{cXyyudpmqOzVQmDinFQbDvyiYwk.0VM2IDL1kzM2czW} `
 
 Approach
 
 - step 1<br>
 Used ghidra to disassemble and view the EXPECTED RESULT value.
-The bits have been mangled using XOR operation with 0xac.
+The bits have been mangled in the following order
+1.Reversed
+2.Swap indexes 11 and 16
+3.Reversed
+I entered xqivthjqkczwowzxtdi as input
+
+
+```
+Connected!                                                                        
+hacker@reverse-engineering~level6-0:~$ /challenge/babyrev-level-6-0
+###
+### Welcome to /challenge/babyrev-level-6-0!
+###
+
+This license verifier software will allow you to read the flag. However, before you can do so, you must verify that you
+are licensed to read flag files! This program consumes a license key over stdin. Each program may perform entirely
+different operations on that input! You must figure out (by reverse engineering this program) what that license key is.
+Providing the correct license key will net you the flag!
+
+Ready to receive your license key!
+
+xqivthjqkczwowzxtdi
+Initial input:
+
+	78 71 69 76 74 68 6a 71 6b 63 7a 77 6f 77 7a 78 74 64 69 
+
+This challenge is now mangling your input using the `reverse` mangler.
+
+This mangled your input, resulting in:
+
+	69 64 74 78 7a 77 6f 77 7a 63 6b 71 6a 68 74 76 69 71 78 
+
+This challenge is now mangling your input using the `swap` mangler for indexes `11` and `16`.
+
+This mangled your input, resulting in:
+
+	69 64 74 78 7a 77 6f 77 7a 63 6b 69 6a 68 74 76 71 71 78 
+
+This challenge is now mangling your input using the `reverse` mangler.
+
+This mangled your input, resulting in:
+
+	78 71 71 76 74 68 6a 69 6b 63 7a 77 6f 77 7a 78 74 64 69 
+
+The mangling is done! The resulting bytes will be used for the final comparison.
+
+Final result of mangling input:
+
+	78 71 71 76 74 68 6a 69 6b 63 7a 77 6f 77 7a 78 74 64 69 
+
+Expected result:
+
+	78 71 71 76 74 68 6a 69 6b 63 7a 77 6f 77 7a 78 74 64 69 
+
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{cXyyudpmqOzVQmDinFQbDvyiYwk.0VM2IDL1kzM2czW}
+
 
 
 ```
 
+<br>
+<br>
+
+# Level 6.1	
+
+**Flag:** `pwn.college{cNyonRYiyWE6AKh6ikQlxrQ9g4X.0lM2IDL1kzM2czW} `
+
+Approach
+
+- step 1<br>
+Used ghidra to disassemble and view the EXPECTED RESULT value.
+The bits have been mangled in the following order
+1.Swap first 7 bits with last 7 bits
+2.Bubble Sort
+3.Same as 1
+
+
+```
+Connected!                                                                        
+hacker@reverse-engineering~level6-1:~$ /challenge/babyrev-level-6-1
+###
+### Welcome to /challenge/babyrev-level-6-1!
+###
+
+This license verifier software will allow you to read the flag. However, before you can do so, you must verify that you
+are licensed to read flag files! This program consumes a license key over stdin. Each program may perform entirely
+different operations on that input! You must figure out (by reverse engineering this program) what that license key is.
+Providing the correct license key will net you the flag!
+
+Ready to receive your license key!
+
+bdeimooprvvxxyz
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{cNyonRYiyWE6AKh6ikQlxrQ9g4X.0lM2IDL1kzM2czW}
+
 
 
 ```
 
-
-![](https://github.com/adityachawla005/cryptonite_taskphase_Aditya/raw/main/TP2/Reverse%20Engineering/pwn-college/assets/l-6.png) 
-
-
-What you learned through solving this challenge:
-<br>
-- Disassembling using Ghidra
-
 <br>
 <br>
+
+# Level 7	
+
+**Flag:** `pwn.college{c6dGTob2O3hgq9ulW-g6uJ59t52.01M2IDL3AjN1czW} `
+
+Approach
+
+- step 1<br>
+We have toreverse the byte order to undo the reverse operation and apply XOR alternately with 0x99 and 0xAB to perform our reverse XOR.
+
+```
+Expected result:
+
+        e1 d3 e1 dc ef dd ec df ea d9 eb db f4 c7 f2 c2 f1 cc fe ce fc cf fd c8 f8
+
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{c6dGTob2O3hgq9ulW-g6uJ59t52.01M2IDL3AjN1czW}
+
+
+```
+
+<br>
+<br>
+
+# Level 8	
+
+**Flag:** `pwn.college{gkfU8kJ9AGOw5afx0OhLKS9f4wf.0VN2IDL3AjN1czW} `
+
+Approach
+
+- step 1<br>
+operations:
+1.Swap: 12 and 32 index
+2.Reverse
+3.Swap: 17 and 23 index
+4.XOR: With a cyclic key 0xf8, 0xf6, 0x35, 0x9f
+5.Reverse
+6.Sort: Ascending order
+7.Swap: 3 and 17 index
+
+```
+Expected result:
+
+        b0 47 f8 64 00 93 8c 79 aa 7c 20 03 77 4f 9c 21 31 25 fe 4f b2 0f 71 2f df 3b 4f 3f 42 74 cc 1a df ca 7a ac 9f
+
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{gkfU8kJ9AGOw5afx0OhLKS9f4wf.0VN2IDL3AjN1czW}
+
+
+```
+
+<br>
+<br>
+
+# Level 9	
+
+**Flag:** `pwn.college{Msf0y3AiBTHpW2W-J_GHyYHMSd4.01N2IDL1kzM2czW}
+ `
+
+Approach
+
+- step 1<br>
+It allows us to change any 5 bytes at any address in the memory.
+It uses MD5 hashing for the second operation.
+We can use NOP sliding to change the Opcodes to 90 (NOP operation) at the offsets.
+
+```bash
+0x2911 <main+1185>:	0x75	0x14	0xb8	0x00
+
+```
+
+
+```
+Changing byte 1/5.
+Offset (hex) to change: 2911
+New value (hex): 90
+The byte has been changed: *0x5fbc661b3911 = 90.
+Changing byte 2/5.
+Offset (hex) to change: 2912
+New value (hex): 90
+The byte has been changed: *0x5fbc661b3912 = 90.
+Changing byte 3/5.
+Offset (hex) to change: 0
+New value (hex): 0
+The byte has been changed: *0x5fbc661b1000 = 0.
+Changing byte 4/5.
+Offset (hex) to change: 0
+New value (hex): 0
+The byte has been changed: *0x5fbc661b1000 = 0.
+Changing byte 5/5.
+Offset (hex) to change: 0
+New value (hex): 0
+The byte has been changed: *0x5fbc661b1000 = 0.
+Ready to receive your license key!
+
+AA
+Initial input:
+
+	41 41 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+
+This challenge is now mangling your input using the `md5` mangler. This mangler cannot be reversed.
+
+This mangled your input, resulting in:
+
+	e4 16 c0 5e 78 b1 2c be ee 9a 28 b4 b8 3e 64 f0 00 00 00 00 00 00 00 00 00 00 00 00 
+
+The mangling is done! The resulting bytes will be used for the final comparison.
+
+Final result of mangling input:
+
+	e4 16 c0 5e 78 b1 2c be ee 9a 28 b4 b8 3e 64 f0 00 00 00 00 00 00 00 00 00 00 00 00 
+
+Expected result:
+
+	9e 04 ec 85 d8 af b7 dc fa e6 87 99 84 2e 0f 80 00 00 00 00 00 00 00 00 00 00 00 00 
+
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{Msf0y3AiBTHpW2W-J_GHyYHMSd4.01N2IDL1kzM2czW}
+
+
+
+```
+
+<br>
+<br>
+
 
