@@ -750,4 +750,60 @@ pwn.college{Msf0y3AiBTHpW2W-J_GHyYHMSd4.01N2IDL1kzM2czW}
 <br>
 <br>
 
+# Level 10	
+
+**Flag:** `pwn.college{Yj8CdA019ETKA6XZDD_MVG1iMKK.0VO2IDL1kzM2czW}`
+
+Approach
+
+- step 1<br>
+This level only allows us to change 1 bit.We can change the optcode 14 which specifies how many steps to jump.We can change it to 0.	
+
+```bash
+   0x0000000000002603 <+1184>:	jne    0x2619 <main+1206>
+
+```
+
+
+```
+
+Changing byte 1/1.
+Offset (hex) to change: 2604
+New value (hex): 0
+The byte has been changed: *0x57eaeb8ac604 = 0.
+Ready to receive your license key!
+
+AA
+Initial input:
+
+	41 41 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+
+This challenge is now mangling your input using the `md5` mangler. This mangler cannot be reversed.
+
+This mangled your input, resulting in:
+
+	39 66 1a ab 2e 9c db 83 d2 23 96 70 c2 6d e1 f4 00 00 00 00 00 00 00 00 00 00 
+
+The mangling is done! The resulting bytes will be used for the final comparison.
+
+Final result of mangling input:
+
+	39 66 1a ab 2e 9c db 83 d2 23 96 70 c2 6d e1 f4 00 00 00 00 00 00 00 00 00 00 
+
+Expected result:
+
+	2f 77 22 f5 05 c7 3d f5 9e 49 f2 68 74 d2 2b 88 00 00 00 00 00 00 00 00 00 00 
+
+Checking the received license key!
+
+You win! Here is your flag:
+pwn.college{Yj8CdA019ETKA6XZDD_MVG1iMKK.0VO2IDL1kzM2czW}
+
+
+
+```
+
+<br>
+<br>
+
 
